@@ -1,0 +1,22 @@
+.Header {
+    background-color: #6eb2ff;
+    margin: 0px;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+
+}
+
+.Service {
+    padding: 2px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-div {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}

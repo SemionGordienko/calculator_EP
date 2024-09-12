@@ -1,0 +1,67 @@
+
+.calculator-div {
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-div > * {
+    padding: 2px;
+}
+
+.selector-cmyk {
+    display: flex;
+}
+
+.selector-param {
+    display: flex;
+    padding: 5px;
+}
+
+.ResultDiv {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ResultSpan {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ResultBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6eb2ff;
+    border-color: #6eb2ff;
+    border: 2px solid transparent;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 3px;
+}
+
+.ResultBtn:hover {
+    background-color: white;
+    border: solid #6eb2ff;
+}
+
+.ResultBtn:active {
+    background-color: #6eb2ff;
+    color: #333333;
+}
+
+.checkBox {
+    padding: 3px;
+}
+
+
+
+#selector {
+    display: flex;
+    padding: 3px;
+}
