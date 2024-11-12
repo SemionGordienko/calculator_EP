@@ -73,6 +73,7 @@ export default function Cards() {
     }
 
    return (
+    <>
     <div className='calculator-div'>
         <h3>Расчет визиток</h3>
         <div className="selector-cmyk">
@@ -127,6 +128,17 @@ export default function Cards() {
                 <p id='Result'>{resultValue}</p>    
             </span>
         </div>
-      </div>
+    </div>
+    <div className='CardsListMainDiv'>
+            <ul className='ListMain'>
+                <li className='ListElement'>
+                    <p>Цветность: ахуевшая.</p>
+                    <p>Тираж: огромный.</p>
+                    <p>Ламинация: была.</p>
+                    <p>Гладкая бумага: вкусная.</p>
+                </li>
+            </ul>
+        </div>
+    </>
    ) 
 }

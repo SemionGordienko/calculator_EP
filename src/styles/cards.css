@@ -59,9 +59,34 @@
     padding: 3px;
 }
 
-
-
 #selector {
     display: flex;
     padding: 3px;
+}
+
+.CardsListMainDiv {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    width: 300px;
+    height: auto;
+}
+
+.ListMain {
+    list-style-type: none;
+}
+
+.ListElement {
+    height: auto;
+    width: 200px;
+    padding: 2px 0 2px 10px;
+    margin: 2px;
+    border: 1px solid rgb(193, 193, 193);
+    border-radius: 8px;
+}
+
+.ListElement > p {
+    padding: 2px 0 2px 0px;
+    margin: 0;
+    font-size: smaller;
 }
