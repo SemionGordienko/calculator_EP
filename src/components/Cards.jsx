@@ -1,6 +1,7 @@
 import '../styles/cards.css'
 import Prices from '../prices/Prices.json'
 import { useState } from 'react'
+import CardsList from './CardsList'
 
 export default function Cards() {
 
@@ -63,7 +64,15 @@ export default function Cards() {
         return laminationValue ? Prices.laminationPrice[getCirculationValue()] : 0
     }
 
+    const cardsData = [{
+        color: selectorValue,
+        circulation: circulationValue,
+        lamination: laminationValue,
+        paper: paperValue
+    }]
+
     function calculatePrice() {
+
         if (circulationValue <= 49) {
             changeResultValue('Need more')
         } else {
@@ -129,16 +138,7 @@ export default function Cards() {
             </span>
         </div>
     </div>
-    <div className='CardsListMainDiv'>
-            <ul className='ListMain'>
-                <li className='ListElement'>
-                    <p>Цветность: ахуевшая.</p>
-                    <p>Тираж: огромный.</p>
-                    <p>Ламинация: была.</p>
-                    <p>Гладкая бумага: вкусная.</p>
-                </li>
-            </ul>
-        </div>
+    <CardsList cardsData={cardsData}/>
     </>
    ) 
 }
