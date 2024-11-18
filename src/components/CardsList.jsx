@@ -1,34 +1,30 @@
+/* eslint-disable react/prop-types */
 export default function CardsList(props) {
 
-    const { cardsData } = props;
-
-    const data = cardsData[0]
+    const { data } = props;
 
     const getColorName = (a) => {
-        if (a == 0) {
-            return '1+0'
-        } else if (a == 1) { 
-            return '1+1'
-        } else if (a == 2) { 
-            return '4+0'
-        } else if (a == 3) { 
-            return '4+4'
-        } else if (a == 4) {
-            return '4+1'
-        } else {
-            return 'Error'
-        }
-    }
+        const colors = {
+            0: '1+0',
+            1: '1+1',
+            2: '4+0',
+            3: '4+4',
+            4: '4+1',
+        };
+        return colors[a] || 'Error';
+    };
     
     return (
     <div className='CardsListMainDiv'>
         <ul className='ListMain'>
-            <li className='ListElement'>
-                <p>Цветность: {getColorName(data.color)}.</p>
-                <p>Тираж: {data.circulation}.</p>
-                <p>Ламинация: {data.lamination ? "Да" : "Нет" }.</p>
-                <p>Гладкая бумага: {data.paper ? "Да" : "Нет" }.</p>
+            {data.map((card, index) => (
+                <li key={index} className='ListElement'>
+                    <p>Цветность: {getColorName(Number(card.color))}.</p>
+                    <p>Тираж: {card.circulation}.</p>
+                    <p>Ламинация: {card.lamination ? "Да" : "Нет" }.</p>
+                    <p>Гладкая бумага: {card.paper ? "Да" : "Нет" }.</p>
             </li>
+            ))}   
         </ul>
     </div>
     )

@@ -10,6 +10,7 @@ export default function Cards() {
     const [laminationValue, setLaminationValue] = useState(false)
     const [paperValue, setPaperValue] = useState(false)
     const [resultValue, setResultValue] = useState('0')
+    const [data, setData] = useState([]);
 
     const handleSelectorChange = (event) => {
         setSelectorValue(event.target.value)
@@ -64,12 +65,16 @@ export default function Cards() {
         return laminationValue ? Prices.laminationPrice[getCirculationValue()] : 0
     }
 
-    const cardsData = [{
-        color: selectorValue,
-        circulation: circulationValue,
-        lamination: laminationValue,
-        paper: paperValue
-    }]
+    const addData = () => {
+        const newData = {
+            color: selectorValue,
+            circulation: circulationValue,
+            lamination: laminationValue,
+            paper: paperValue
+        }
+
+        setData([...data, newData])
+    }
 
     function calculatePrice() {
 
@@ -78,8 +83,9 @@ export default function Cards() {
         } else {
             let result = (getColorPrice()+getLaminationPrice()+getPaperPrice())*circulationValue
             changeResultValue(parseInt(result))
-         }
     }
+    addData()
+ }
 
    return (
     <>
@@ -138,7 +144,7 @@ export default function Cards() {
             </span>
         </div>
     </div>
-    <CardsList cardsData={cardsData}/>
+    <CardsList data={data}/>
     </>
    ) 
 }
